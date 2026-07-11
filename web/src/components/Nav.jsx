@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import useScrollY from '../hooks/useScrollY';
-import { useTheme } from '../theme.jsx';
 import { useBooking } from '../BookingContext.jsx';
 
 const LINKS = [
@@ -12,7 +11,6 @@ const LINKS = [
 
 export default function Nav() {
   const y = useScrollY();
-  const { theme, toggleTheme } = useTheme();
   const { openModal } = useBooking();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -30,7 +28,7 @@ export default function Nav() {
     <nav className={`bf-nav${scrolled ? ' bf-nav-scrolled' : ''}`} style={{ position: 'relative' }}>
       <div className="bf-nav-row">
         <a href="#top" className="bf-nav-logo">
-          <img src="/assets/brandface-logo.png" alt="BrandFace Media" className="bf-logo-img" />
+          <img src="/assets/brandface-logo.png" alt="BrandFace Media" />
           <span>BrandFace</span>
         </a>
         <div className="bf-nav-right">
@@ -41,15 +39,6 @@ export default function Nav() {
               </a>
             ))}
           </div>
-          <button
-            type="button"
-            className="bf-theme-toggle"
-            onClick={toggleTheme}
-            aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
-            title={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
-          >
-            {theme === 'light' ? '☾' : '☀'}
-          </button>
           <a href="#book" className="bf-btn-gold bf-nav-book-desktop" onClick={handleBook}>
             Book a call
           </a>
