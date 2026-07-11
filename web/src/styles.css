@@ -43,7 +43,7 @@
   color: var(--gold-text);
 }
 .bf-heading {
-  font-family: 'Libre Caslon Display', Georgia, serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 400;
   color: var(--text);
 }
@@ -314,7 +314,7 @@
   box-shadow: 0 0 8px var(--gold);
 }
 .bf-hero h1 {
-  font-family: 'Libre Caslon Display', Georgia, serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 400;
   font-size: clamp(36px, 6.4vw, 82px);
   line-height: 1.04;
@@ -327,7 +327,7 @@
   display: block;
   color: var(--gold-text);
   font-style: italic;
-  font-family: 'Spectral', serif;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 .bf-hero-sub {
   margin: 26px auto 0;
@@ -434,7 +434,8 @@
   background: var(--bg-alt);
 }
 .bf-statbar-num {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: clamp(30px, 4vw, 46px);
   color: var(--gold-text);
   line-height: 1;
@@ -449,7 +450,8 @@
 
 /* ============ problem / generic text sections ============ */
 .bf-h2-lg {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: clamp(28px, 4.6vw, 54px);
   line-height: 1.1;
   letter-spacing: -0.01em;
@@ -469,7 +471,8 @@
   max-width: 720px;
 }
 .bf-wwd-head h2 {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: clamp(28px, 4.4vw, 52px);
   line-height: 1.08;
   margin-top: 18px;
@@ -500,7 +503,8 @@
   border-color: color-mix(in srgb, var(--gold) 55%, transparent);
 }
 .bf-card-num {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: 22px;
   color: var(--gold-text);
 }
@@ -547,7 +551,8 @@
   pointer-events: none;
 }
 .bf-trackrecord-num {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: clamp(40px, 9vw, 120px);
   line-height: 1;
   margin-top: 20px;
@@ -580,14 +585,15 @@
   }
 }
 .bf-casestudy-grid h2 {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: clamp(28px, 4.2vw, 50px);
   line-height: 1.06;
   margin-top: 16px;
   color: var(--text);
 }
 .bf-casestudy-alias {
-  font-family: 'Spectral', serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-style: italic;
   font-size: 20px;
   color: var(--gold-text);
@@ -619,7 +625,8 @@
   background: var(--card-bg);
 }
 .bf-casestudy-stats .num {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: 34px;
   color: var(--gold-text);
 }
@@ -638,7 +645,8 @@
 
 /* ============ founder ============ */
 .bf-founder-lede {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: clamp(26px, 4vw, 46px);
   line-height: 1.12;
   margin-top: 18px;
@@ -668,7 +676,7 @@
 }
 .bf-founder-callout p {
   margin-top: 14px;
-  font-family: 'Spectral', serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: clamp(18px, 2.2vw, 24px);
   line-height: 1.55;
   color: var(--text-strong);
@@ -676,13 +684,14 @@
 .bf-founder-callout .accent {
   color: var(--gold-text);
   font-style: normal;
-  font-family: 'Archivo', sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 700;
 }
 
 /* ============ offer ============ */
 .bf-offer-head h2 {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: clamp(28px, 4.4vw, 52px);
   line-height: 1.08;
   margin-top: 16px;
@@ -717,7 +726,8 @@
   gap: 6px;
 }
 .bf-tier-price .amount {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: 56px;
   line-height: 1;
   color: var(--text);
@@ -839,7 +849,8 @@
   color: #4a3a12;
 }
 .bf-guarantee h2 {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: clamp(32px, 6vw, 76px);
   line-height: 1.05;
   margin-top: 20px;
@@ -872,7 +883,8 @@
   max-width: 720px;
 }
 .bf-roi-head h2 {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: clamp(26px, 4.4vw, 52px);
   line-height: 1.1;
   margin-top: 18px;
@@ -909,7 +921,8 @@
   font-weight: 600;
 }
 .bf-roi-card .settlement {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: 30px;
   margin-top: 6px;
   color: var(--text);
@@ -927,7 +940,8 @@
   color: var(--muted-3);
 }
 .bf-roi-card .fee {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: 40px;
   color: var(--gold-text);
   margin-top: 4px;
@@ -950,7 +964,8 @@
   padding-top: clamp(40px, 6vw, 72px);
 }
 .bf-whodiff-grid h3 {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: clamp(22px, 3vw, 34px);
   line-height: 1.12;
   margin-top: 16px;
@@ -1025,7 +1040,8 @@
   border-radius: 100px;
 }
 .bf-testimonials h2 {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: clamp(28px, 4.4vw, 52px);
   line-height: 1.08;
   margin-top: 18px;
@@ -1059,7 +1075,7 @@
 }
 .bf-testimonial-quote {
   margin-top: 16px;
-  font-family: 'Spectral', serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: 18px;
   line-height: 1.55;
   color: var(--text-strong);
@@ -1079,7 +1095,8 @@
   border: 1px solid color-mix(in srgb, var(--gold) 30%, transparent);
   display: grid;
   place-items: center;
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: 18px;
   color: var(--gold-text);
   flex-shrink: 0;
@@ -1144,7 +1161,8 @@
   text-align: center;
 }
 .bf-book h2 {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: clamp(30px, 5.4vw, 64px);
   line-height: 1.06;
   margin-top: 18px;
@@ -1274,7 +1292,8 @@
   font-size: 12px;
 }
 .bf-modal-head h3 {
-  font-family: 'Libre Caslon Display', serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
   font-size: clamp(22px, 3.4vw, 30px);
   line-height: 1.1;
   margin-top: 8px;

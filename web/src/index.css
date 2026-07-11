@@ -61,7 +61,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Archivo', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   transition: background 0.3s ease, color 0.3s ease;
@@ -85,7 +85,7 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-weight: 400;
+  font-weight: 700;
 }
 p {
   margin: 0;
