@@ -235,36 +235,6 @@
   padding: 150px clamp(20px, 5vw, 48px) 70px;
   overflow: hidden;
 }
-.bf-hero-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(20px);
-  pointer-events: none;
-}
-.bf-hero-glow-main {
-  top: -140px;
-  left: 50%;
-  width: min(900px, 130vw);
-  height: 640px;
-  margin-left: min(-450px, -65vw);
-  background: radial-gradient(closest-side, color-mix(in srgb, var(--gold) 20%, transparent), transparent 72%);
-  animation: bf-float 16s ease-in-out infinite;
-}
-.bf-hero-glow-side {
-  top: 40px;
-  width: clamp(220px, 40vw, 520px);
-  height: clamp(220px, 40vw, 520px);
-  background: radial-gradient(closest-side, color-mix(in srgb, var(--gold) 12%, transparent), transparent 70%);
-  filter: blur(10px);
-  animation: bf-float2 20s ease-in-out infinite;
-}
-.bf-hero-glow-side.right {
-  right: -8%;
-}
-.bf-hero-glow-side.left {
-  left: -8%;
-}
-
 .bf-hero-inner {
   position: relative;
   max-width: 1000px;
@@ -294,7 +264,7 @@
 }
 .bf-hero h1 {
   font-family: 'Inter', system-ui, sans-serif;
-  font-weight: 400;
+  font-weight: 800;
   font-size: clamp(36px, 6.4vw, 82px);
   line-height: 1.04;
   letter-spacing: -0.01em;
@@ -393,6 +363,31 @@
   width: 100%;
   height: 100%;
   border: 0;
+}
+.bf-video-fullscreen-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(16, 14, 11, 0.55);
+  backdrop-filter: blur(4px);
+  color: #f3eee4;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.bf-video-fullscreen-btn:hover {
+  background: rgba(16, 14, 11, 0.8);
+  border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+  transform: scale(1.06);
+}
+.bf-video-fullscreen-btn svg {
+  width: 16px;
+  height: 16px;
 }
 
 /* ============ stat bar ============ */
