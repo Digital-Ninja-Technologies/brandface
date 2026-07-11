@@ -3,7 +3,7 @@ import Reveal from './Reveal.jsx';
 import FullscreenIcon from './FullscreenIcon.jsx';
 import { useBooking } from '../BookingContext.jsx';
 import requestFullscreen from '../hooks/requestFullscreen.js';
-import { GUARANTEE_CONSULTS, GUARANTEE_DAYS, DRIVE_VIDEO_EMBED_URL } from '../siteConfig.js';
+import { GUARANTEE_CONSULTS, GUARANTEE_DAYS, DRIVE_VIDEO_EMBED_URL, DRIVE_VIDEO_VIEW_URL } from '../siteConfig.js';
 
 export default function Hero() {
   const { openModal } = useBooking();
@@ -43,7 +43,7 @@ export default function Hero() {
             className="bf-btn-outline"
             onClick={(e) => {
               e.preventDefault();
-              requestFullscreen(videoBoxRef.current);
+              requestFullscreen(videoBoxRef.current, DRIVE_VIDEO_VIEW_URL);
             }}
           >
             <span className="bf-btn-outline-icon">
@@ -60,7 +60,7 @@ export default function Hero() {
               className="bf-video-fullscreen-btn"
               aria-label="Watch full screen"
               title="Watch full screen"
-              onClick={() => requestFullscreen(videoBoxRef.current)}
+              onClick={() => requestFullscreen(videoBoxRef.current, DRIVE_VIDEO_VIEW_URL)}
             >
               <FullscreenIcon size={16} />
             </button>

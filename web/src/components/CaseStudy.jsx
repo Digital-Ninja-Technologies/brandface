@@ -3,7 +3,7 @@ import Reveal from './Reveal.jsx';
 import Count from './Count.jsx';
 import FullscreenIcon from './FullscreenIcon.jsx';
 import requestFullscreen from '../hooks/requestFullscreen.js';
-import { DRIVE_VIDEO_EMBED_URL } from '../siteConfig.js';
+import { DRIVE_VIDEO_EMBED_URL, DRIVE_VIDEO_VIEW_URL } from '../siteConfig.js';
 
 export default function CaseStudy() {
   const videoBoxRef = useRef(null);
@@ -57,7 +57,7 @@ export default function CaseStudy() {
                 className="bf-video-fullscreen-btn"
                 aria-label="Watch full screen"
                 title="Watch full screen"
-                onClick={() => requestFullscreen(videoBoxRef.current)}
+                onClick={() => requestFullscreen(videoBoxRef.current, DRIVE_VIDEO_VIEW_URL)}
               >
                 <FullscreenIcon size={16} />
               </button>
@@ -71,7 +71,7 @@ export default function CaseStudy() {
             <button
               type="button"
               className="bf-casestudy-caption bf-casestudy-caption-btn"
-              onClick={() => requestFullscreen(videoBoxRef.current)}
+              onClick={() => requestFullscreen(videoBoxRef.current, DRIVE_VIDEO_VIEW_URL)}
             >
               <FullscreenIcon size={12} />
               Watch how the system works
