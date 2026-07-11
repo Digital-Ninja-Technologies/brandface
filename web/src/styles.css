@@ -304,34 +304,6 @@
   gap: 14px;
   justify-content: center;
 }
-.bf-btn-outline {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border-strong);
-  font-weight: 600;
-  font-size: 16px;
-  padding: 16px 26px;
-  border-radius: 4px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-.bf-btn-outline:hover {
-  color: var(--text);
-  border-color: color-mix(in srgb, var(--gold) 55%, transparent);
-  background: color-mix(in srgb, var(--gold) 5%, transparent);
-}
-.bf-btn-outline-icon {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--gold) 20%, transparent);
-  display: grid;
-  place-items: center;
-  font-size: 9px;
-  color: var(--gold-text);
-}
 .bf-btn-gold-lg {
   background: var(--gold);
   color: var(--ink-on-gold);
@@ -408,6 +380,11 @@
 .bf-video-fullscreen-btn svg {
   width: 16px;
   height: 16px;
+}
+@media (max-width: 640px) {
+  .bf-video-fullscreen-btn {
+    display: none;
+  }
 }
 
 /* ============ stat bar ============ */

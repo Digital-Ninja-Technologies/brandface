@@ -38,19 +38,6 @@ export default function Hero() {
           >
             Book your strategy call →
           </a>
-          <a
-            href="#video"
-            className="bf-btn-outline"
-            onClick={(e) => {
-              e.preventDefault();
-              requestFullscreen(videoBoxRef.current, DRIVE_VIDEO_VIEW_URL);
-            }}
-          >
-            <span className="bf-btn-outline-icon">
-              <FullscreenIcon size={10} />
-            </span>
-            Watch the breakdown
-          </a>
         </Reveal>
 
         <Reveal delay={300} className="bf-video-frame">
