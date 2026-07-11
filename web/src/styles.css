@@ -232,7 +232,7 @@
 /* ============ hero ============ */
 .bf-hero {
   position: relative;
-  padding: 150px clamp(20px, 5vw, 48px) 70px;
+  padding: 75px clamp(20px, 5vw, 48px) 70px;
   overflow: hidden;
 }
 .bf-hero-inner {

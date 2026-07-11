@@ -25,7 +25,7 @@ export default function Nav() {
   const handleLinkClick = () => setMenuOpen(false);
 
   return (
-    <nav className={`bf-nav${scrolled ? ' bf-nav-scrolled' : ''}`} style={{ position: 'relative' }}>
+    <nav className={`bf-nav${scrolled ? ' bf-nav-scrolled' : ''}`}>
       <div className="bf-nav-row">
         <a href="#top" className="bf-nav-logo">
           <img src="/assets/brandface-logo.png" alt="BrandFace Media" />
