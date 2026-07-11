@@ -1,13 +1,10 @@
-import { useRef } from 'react';
 import Reveal from './Reveal.jsx';
-import FullscreenIcon from './FullscreenIcon.jsx';
+import VideoBox from './VideoBox.jsx';
 import { useBooking } from '../BookingContext.jsx';
-import requestFullscreen from '../hooks/requestFullscreen.js';
-import { GUARANTEE_CONSULTS, GUARANTEE_DAYS, DRIVE_VIDEO_EMBED_URL, DRIVE_VIDEO_VIEW_URL } from '../siteConfig.js';
+import { GUARANTEE_CONSULTS, GUARANTEE_DAYS } from '../siteConfig.js';
 
 export default function Hero() {
   const { openModal } = useBooking();
-  const videoBoxRef = useRef(null);
 
   return (
     <header id="top" className="bf-hero">
@@ -41,18 +38,7 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={300} className="bf-video-frame">
-          <div className="bf-video-box" ref={videoBoxRef}>
-            <button
-              type="button"
-              className="bf-video-fullscreen-btn"
-              aria-label="Watch full screen"
-              title="Watch full screen"
-              onClick={() => requestFullscreen(videoBoxRef.current, DRIVE_VIDEO_VIEW_URL)}
-            >
-              <FullscreenIcon size={16} />
-            </button>
-            <iframe src={DRIVE_VIDEO_EMBED_URL} allow="autoplay" allowFullScreen title="BrandFace Media breakdown" />
-          </div>
+          <VideoBox title="BrandFace Media breakdown" />
         </Reveal>
       </div>
     </header>

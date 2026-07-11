@@ -1,13 +1,8 @@
-import { useRef } from 'react';
 import Reveal from './Reveal.jsx';
 import Count from './Count.jsx';
-import FullscreenIcon from './FullscreenIcon.jsx';
-import requestFullscreen from '../hooks/requestFullscreen.js';
-import { DRIVE_VIDEO_EMBED_URL, DRIVE_VIDEO_VIEW_URL } from '../siteConfig.js';
+import VideoBox from './VideoBox.jsx';
 
 export default function CaseStudy() {
-  const videoBoxRef = useRef(null);
-
   return (
     <section id="video" className="bf-section bf-section-alt bf-border-bottom">
       <div className="bf-container">
@@ -51,31 +46,8 @@ export default function CaseStudy() {
           </div>
           <Reveal delay={120} style={{ position: 'relative' }}>
             <div className="bf-video-frame-glow" />
-            <div className="bf-video-box" ref={videoBoxRef}>
-              <button
-                type="button"
-                className="bf-video-fullscreen-btn"
-                aria-label="Watch full screen"
-                title="Watch full screen"
-                onClick={() => requestFullscreen(videoBoxRef.current, DRIVE_VIDEO_VIEW_URL)}
-              >
-                <FullscreenIcon size={16} />
-              </button>
-              <iframe
-                src={DRIVE_VIDEO_EMBED_URL}
-                allow="autoplay"
-                allowFullScreen
-                title="How the BrandFace Media system works"
-              />
-            </div>
-            <button
-              type="button"
-              className="bf-casestudy-caption bf-casestudy-caption-btn"
-              onClick={() => requestFullscreen(videoBoxRef.current, DRIVE_VIDEO_VIEW_URL)}
-            >
-              <FullscreenIcon size={12} />
-              Watch how the system works
-            </button>
+            <VideoBox title="How the BrandFace Media system works" />
+            <div className="bf-casestudy-caption">Watch how the system works</div>
           </Reveal>
         </div>
       </div>
