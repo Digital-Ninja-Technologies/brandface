@@ -1,13 +1,9 @@
 import { useRef } from 'react';
 import Reveal from './Reveal.jsx';
+import FullscreenIcon from './FullscreenIcon.jsx';
 import { useBooking } from '../BookingContext.jsx';
+import requestFullscreen from '../hooks/requestFullscreen.js';
 import { GUARANTEE_CONSULTS, GUARANTEE_DAYS, DRIVE_VIDEO_EMBED_URL } from '../siteConfig.js';
-
-function requestFullscreen(el) {
-  if (!el) return;
-  const request = el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen;
-  if (request) request.call(el);
-}
 
 export default function Hero() {
   const { openModal } = useBooking();
@@ -51,12 +47,7 @@ export default function Hero() {
             }}
           >
             <span className="bf-btn-outline-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" width="10" height="10">
-                <polyline points="15 3 21 3 21 9" />
-                <polyline points="9 21 3 21 3 15" />
-                <line x1="21" y1="3" x2="14" y2="10" />
-                <line x1="3" y1="21" x2="10" y2="14" />
-              </svg>
+              <FullscreenIcon size={10} />
             </span>
             Watch the breakdown
           </a>
@@ -71,12 +62,7 @@ export default function Hero() {
               title="Watch full screen"
               onClick={() => requestFullscreen(videoBoxRef.current)}
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="15 3 21 3 21 9" />
-                <polyline points="9 21 3 21 3 15" />
-                <line x1="21" y1="3" x2="14" y2="10" />
-                <line x1="3" y1="21" x2="10" y2="14" />
-              </svg>
+              <FullscreenIcon size={16} />
             </button>
             <iframe src={DRIVE_VIDEO_EMBED_URL} allow="autoplay" allowFullScreen title="BrandFace Media breakdown" />
           </div>
