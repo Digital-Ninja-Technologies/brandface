@@ -369,6 +369,14 @@
   background: #000;
   aspect-ratio: 16 / 9;
 }
+@media (max-width: 640px) {
+  /* On short mobile boxes the Drive player's own header/controls chrome eats a much
+     bigger share of a 16:9 frame, visually cropping the video top and bottom. Give it
+     more height to breathe. */
+  .bf-video-box {
+    aspect-ratio: 4 / 3;
+  }
+}
 .bf-video-box iframe {
   position: absolute;
   inset: 0;
