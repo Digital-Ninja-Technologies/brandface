@@ -42,8 +42,16 @@ async function submitLead(form) {
 
 // Three-step flow: qualification form -> success confirmation -> Calendly scheduler.
 // `step` is owned by the parent (Modal/BookCta) so it can adapt its own heading copy too.
-export default function BookingFlow({ step, onSubmitSuccess, onScheduleClick, calendlyClassName }) {
-  const [form, setForm] = useState(EMPTY_FORM);
+// `initialForm` lets a parent seed the success message (e.g. the popup modal picking up
+// the name/firm from a form that was actually submitted elsewhere, on the page).
+export default function BookingFlow({
+  step,
+  onSubmitSuccess,
+  onScheduleClick = () => {},
+  calendlyClassName,
+  initialForm,
+}) {
+  const [form, setForm] = useState(() => ({ ...EMPTY_FORM, ...initialForm }));
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
 
@@ -55,7 +63,7 @@ export default function BookingFlow({ step, onSubmitSuccess, onScheduleClick, ca
     setError(null);
     try {
       await submitLead(form);
-      onSubmitSuccess();
+      onSubmitSuccess(form);
     } catch (err) {
       setError("Something went wrong sending that. Please try again, or email us directly if it keeps happening.");
     } finally {

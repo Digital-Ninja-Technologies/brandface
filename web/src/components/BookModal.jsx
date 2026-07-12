@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useBooking } from '../BookingContext.jsx';
 import BookingFlow from './BookingFlow.jsx';
 import { GUARANTEE_CONSULTS, GUARANTEE_DAYS } from '../siteConfig.js';
@@ -19,16 +18,11 @@ const HEADERS = {
 };
 
 export default function BookModal() {
-  const { modalOpen, closeModal } = useBooking();
-  const [step, setStep] = useState('form');
-
-  useEffect(() => {
-    if (modalOpen) setStep('form');
-  }, [modalOpen]);
+  const { modalOpen, modalStep, leadInfo, closeModal, setModalStep } = useBooking();
 
   if (!modalOpen) return null;
 
-  const header = HEADERS[step];
+  const header = HEADERS[modalStep];
 
   return (
     <div className="bf-modal-backdrop" onClick={closeModal}>
@@ -45,9 +39,10 @@ export default function BookModal() {
         </div>
         <div className="bf-modal-body">
           <BookingFlow
-            step={step}
-            onSubmitSuccess={() => setStep('success')}
-            onScheduleClick={() => setStep('calendly')}
+            step={modalStep}
+            initialForm={leadInfo}
+            onSubmitSuccess={() => setModalStep('success')}
+            onScheduleClick={() => setModalStep('calendly')}
             calendlyClassName="bf-modal-calendly"
           />
         </div>
