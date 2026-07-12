@@ -95,6 +95,7 @@ export default function BookingFlow({ step, onSubmitSuccess, onScheduleClick, ca
           name="fullName"
           type="text"
           autoComplete="name"
+          placeholder="Jordan Rivera"
           required
           value={form.fullName}
           onChange={update('fullName')}
@@ -107,6 +108,7 @@ export default function BookingFlow({ step, onSubmitSuccess, onScheduleClick, ca
           name="phone"
           type="tel"
           autoComplete="tel"
+          placeholder="(555) 123-4567"
           required
           value={form.phone}
           onChange={update('phone')}
@@ -119,6 +121,7 @@ export default function BookingFlow({ step, onSubmitSuccess, onScheduleClick, ca
           name="email"
           type="email"
           autoComplete="email"
+          placeholder="you@yourfirm.com"
           required
           value={form.email}
           onChange={update('email')}
@@ -131,6 +134,7 @@ export default function BookingFlow({ step, onSubmitSuccess, onScheduleClick, ca
           name="firmName"
           type="text"
           autoComplete="organization"
+          placeholder="Rivera Injury Law"
           required
           value={form.firmName}
           onChange={update('firmName')}
