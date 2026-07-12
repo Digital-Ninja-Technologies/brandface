@@ -1073,6 +1073,86 @@
   color: var(--muted-4);
 }
 
+/* ============ booking flow (qualification form -> success -> calendly) ============ */
+.bf-booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.bf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.bf-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted-2);
+}
+.bf-field input,
+.bf-field select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+.bf-field input:focus,
+.bf-field select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.bf-field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238e8677' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+  padding-right: 38px;
+}
+.bf-field select:invalid {
+  color: var(--muted-3);
+}
+.bf-booking-submit {
+  width: 100%;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.bf-booking-success {
+  text-align: center;
+  padding: 12px 8px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: 440px;
+  margin: 0 auto;
+}
+.bf-booking-success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--ink-on-gold);
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  font-weight: 700;
+}
+.bf-booking-success-text {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--muted-2);
+}
+
 /* ============ footer ============ */
 .bf-footer {
   padding: 44px clamp(20px, 5vw, 48px);
