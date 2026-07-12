@@ -1,7 +1,6 @@
 import './styles.css';
 import { BookingProvider } from './BookingContext.jsx';
 import ScrollProgress from './components/ScrollProgress.jsx';
-import Nav from './components/Nav.jsx';
 import Hero from './components/Hero.jsx';
 import StatBar from './components/StatBar.jsx';
 import Problem from './components/Problem.jsx';
@@ -23,7 +22,6 @@ function App() {
     <BookingProvider>
       <div style={{ position: 'relative' }}>
         <ScrollProgress />
-        <Nav />
         <Hero />
         <StatBar />
         <Problem />

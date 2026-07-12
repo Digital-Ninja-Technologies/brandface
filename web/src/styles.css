@@ -96,139 +96,6 @@
   transition: width 0.1s linear;
 }
 
-/* ============ nav ============ */
-.bf-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  min-height: 74px;
-  display: flex;
-  align-items: center;
-  background: transparent;
-  border-bottom: 1px solid transparent;
-  transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
-}
-.bf-nav.bf-nav-scrolled {
-  background: var(--nav-scrolled-bg);
-  backdrop-filter: blur(14px);
-  border-bottom-color: var(--border-strong);
-}
-.bf-nav-row {
-  width: 100%;
-  max-width: 1220px;
-  margin: 0 auto;
-  padding: 13px clamp(20px, 5vw, 48px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-.bf-nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  color: var(--text);
-}
-.bf-nav-logo img {
-  height: 30px;
-  width: auto;
-  display: block;
-}
-
-.bf-nav-logo span {
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  font-size: 16px;
-  color: var(--text);
-}
-.bf-nav-right {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-}
-.bf-nav-links {
-  display: flex;
-  gap: 30px;
-}
-.bf-nav-links a {
-  color: var(--muted);
-  font-size: 14.5px;
-  font-weight: 500;
-}
-.bf-nav-links a:hover {
-  color: var(--gold-text);
-}
-.bf-btn-gold {
-  background: var(--gold);
-  color: var(--ink-on-gold);
-  font-weight: 700;
-  font-size: 14px;
-  padding: 11px 20px;
-  border-radius: 3px;
-  letter-spacing: 0.01em;
-  border: none;
-  display: inline-block;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.bf-btn-gold:hover {
-  color: var(--ink-on-gold);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--gold) 40%, transparent);
-}
-
-.bf-nav-burger {
-  display: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  border: 1px solid var(--border-strong);
-  background: transparent;
-  color: var(--text);
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-}
-
-.bf-nav-mobile-panel {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: var(--card-bg);
-  border-bottom: 1px solid var(--border-strong);
-  box-shadow: 0 24px 50px -20px var(--shadow-color);
-  padding: 10px clamp(20px, 5vw, 48px) 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  animation: bf-fade 0.18s ease;
-}
-.bf-nav-mobile-panel a {
-  color: var(--text);
-  font-size: 16px;
-  font-weight: 500;
-  padding: 12px 4px;
-  border-bottom: 1px solid var(--border);
-}
-.bf-nav-mobile-panel .bf-btn-gold {
-  margin-top: 14px;
-  text-align: center;
-}
-
-@media (max-width: 860px) {
-  .bf-nav-links {
-    display: none;
-  }
-  .bf-nav-burger {
-    display: flex;
-  }
-  .bf-nav-book-desktop {
-    display: none;
-  }
-}
-
 /* ============ hero ============ */
 .bf-hero {
   position: relative;
@@ -854,7 +721,7 @@
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: #4a3a12;
+  color: #242424;
 }
 .bf-guarantee h2 {
   font-family: 'Inter', system-ui, sans-serif;
@@ -868,7 +735,7 @@
   margin: 26px auto 0;
   font-size: clamp(16px, 2vw, 20px);
   line-height: 1.6;
-  color: #3a2e10;
+  color: #2e2e2e;
   max-width: 60ch;
 }
 .bf-guarantee-defbox {
@@ -883,7 +750,7 @@
   max-width: 620px;
 }
 .bf-guarantee-defbox strong {
-  color: #cba24c;
+  color: var(--gold-text);
 }
 
 /* ============ ROI ============ */
