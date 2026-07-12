@@ -18,7 +18,7 @@ export default function BookModal() {
           <div className="bf-eyebrow">Book a strategy call</div>
           <h3>Pick a time that works for you.</h3>
           <p>
-            A 30-minute call, no obligation and no pressure. Backed by the {GUARANTEE_CONSULTS}-consultation,{' '}
+            A 30-minute call, no obligation and no pressure. Backed by the {GUARANTEE_CONSULTS} consultation,{' '}
             {GUARANTEE_DAYS}-day guarantee on the Growth Engine.
           </p>
         </div>

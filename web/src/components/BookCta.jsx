@@ -20,7 +20,7 @@ export default function BookCta() {
             <iframe src={CALENDLY_URL} title="Schedule a call with BrandFace Media" />
           </div>
           <p className="bf-book-note">
-            Backed by the {GUARANTEE_CONSULTS}-consultation, {GUARANTEE_DAYS}-day guarantee on the Growth Engine.
+            Backed by the {GUARANTEE_CONSULTS} consultation, {GUARANTEE_DAYS}-day guarantee on the Growth Engine.
           </p>
         </Reveal>
       </div>
