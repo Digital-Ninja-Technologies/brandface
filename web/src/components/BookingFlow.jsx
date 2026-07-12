@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CALENDLY_URL } from '../siteConfig.js';
+import { CALENDLY_URL, WEB3FORMS_ACCESS_KEY } from '../siteConfig.js';
 
 const REVENUE_OPTIONS = ['Under $25K', '$25K–$50K', '$50K–$100K', '$100K+'];
 const CONSTRAINT_OPTIONS = [
@@ -18,16 +18,49 @@ const EMPTY_FORM = {
   constraint: '',
 };
 
+async function submitLead(form) {
+  const res = await fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify({
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: `New strategy call lead: ${form.firmName || form.fullName}`,
+      from_name: 'BrandFace Media site',
+      'Full name': form.fullName,
+      'Best number to reach them directly': form.phone,
+      Email: form.email,
+      'Firm name': form.firmName,
+      'Current monthly revenue': form.monthlyRevenue,
+      '#1 constraint': form.constraint,
+    }),
+  });
+  const data = await res.json().catch(() => null);
+  if (!res.ok || !data?.success) {
+    throw new Error(data?.message || 'Submission failed');
+  }
+}
+
 // Three-step flow: qualification form -> success confirmation -> Calendly scheduler.
 // `step` is owned by the parent (Modal/BookCta) so it can adapt its own heading copy too.
 export default function BookingFlow({ step, onSubmitSuccess, onScheduleClick, calendlyClassName }) {
   const [form, setForm] = useState(EMPTY_FORM);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(null);
 
   const update = (field) => (e) => setForm((f) => ({ ...f, [field]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSubmitSuccess();
+    setSubmitting(true);
+    setError(null);
+    try {
+      await submitLead(form);
+      onSubmitSuccess();
+    } catch (err) {
+      setError("Something went wrong sending that. Please try again, or email us directly if it keeps happening.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (step === 'calendly') {
@@ -129,8 +162,9 @@ export default function BookingFlow({ step, onSubmitSuccess, onScheduleClick, ca
           ))}
         </select>
       </div>
-      <button type="submit" className="bf-btn-gold-lg bf-booking-submit">
-        Continue
+      {error && <p className="bf-field-error">{error}</p>}
+      <button type="submit" className="bf-btn-gold-lg bf-booking-submit" disabled={submitting}>
+        {submitting ? 'Submitting…' : 'Continue'}
       </button>
     </form>
   );

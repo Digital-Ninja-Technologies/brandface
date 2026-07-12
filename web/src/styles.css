@@ -1125,6 +1125,17 @@
   margin-top: 4px;
   text-align: center;
 }
+.bf-booking-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+.bf-field-error {
+  margin: -6px 0 0;
+  font-size: 13.5px;
+  color: #e08a7a;
+  line-height: 1.5;
+}
 
 .bf-booking-success {
   text-align: center;
