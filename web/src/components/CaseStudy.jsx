@@ -46,7 +46,12 @@ export default function CaseStudy() {
           </div>
           <Reveal delay={120} style={{ position: 'relative' }}>
             <div className="bf-video-frame-glow" />
-            <VideoBox title="How the BrandFace Media system works" />
+            <VideoBox
+              title="How the BrandFace Media system works"
+              embedUrl="https://www.youtube.com/embed/EHDfK2Tie-8?rel=0"
+              viewUrl="https://youtube.com/shorts/EHDfK2Tie-8"
+              className="bf-video-box-vertical"
+            />
             <div className="bf-casestudy-caption">Watch how the system works</div>
           </Reveal>
         </div>
