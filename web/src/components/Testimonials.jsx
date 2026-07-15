@@ -1,5 +1,6 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Reveal from './Reveal.jsx';
+import ScreenshotLightbox from './ScreenshotLightbox.jsx';
 
 const PROOF_SCREENSHOTS = [
   { src: '/assets/IMG_1874.png', alt: 'Instagram professional dashboard: 230.7K views, 7.0K interactions, 452 new followers over 30 days' },
@@ -23,6 +24,7 @@ function scrollByAmount(ref, dir) {
 
 export default function Testimonials() {
   const sliderRef = useRef(null);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
 
   return (
     <section id="proof" className="bf-section bf-testimonials">
@@ -48,8 +50,14 @@ export default function Testimonials() {
             ‹
           </button>
           <div className="bf-proof-slider" ref={sliderRef}>
-            {PROOF_SCREENSHOTS.map((shot) => (
-              <div key={shot.src} className="bf-proof-slide" tabIndex={0}>
+            {PROOF_SCREENSHOTS.map((shot, i) => (
+              <div
+                key={shot.src}
+                className="bf-proof-slide"
+                tabIndex={0}
+                onMouseEnter={() => setLightboxIndex(i)}
+                onClick={() => setLightboxIndex(i)}
+              >
                 <img src={shot.src} alt={shot.alt} loading="lazy" />
               </div>
             ))}
@@ -63,7 +71,20 @@ export default function Testimonials() {
             ›
           </button>
         </Reveal>
+
+        <Reveal delay={100} className="bf-proof-view-all">
+          <button type="button" className="bf-proof-view-btn" onClick={() => setLightboxIndex(0)}>
+            Click to view screenshots
+          </button>
+        </Reveal>
       </div>
+
+      <ScreenshotLightbox
+        images={PROOF_SCREENSHOTS}
+        index={lightboxIndex}
+        onClose={() => setLightboxIndex(null)}
+        onNavigate={setLightboxIndex}
+      />
     </section>
   );
 }
