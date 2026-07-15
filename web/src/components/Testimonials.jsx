@@ -29,12 +29,12 @@ export default function Testimonials() {
       <div className="bf-testimonials-glow" />
       <div className="bf-container-mid" style={{ position: 'relative' }}>
         <div className="bf-center">
-          <Reveal className="bf-testimonials-badge">Additional proof</Reveal>
+          <Reveal className="bf-testimonials-badge">Testimonials and additional proof</Reveal>
           <Reveal as="h2" delay={80}>
             The receipts.
           </Reveal>
           <Reveal as="p" delay={140}>
-            Screenshots straight from the client's own accounts, not slides we made ourselves.
+            Screenshots straight from the client's own accounts.
           </Reveal>
         </div>
 
