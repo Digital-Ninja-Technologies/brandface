@@ -55,7 +55,6 @@ export default function Testimonials() {
                 key={shot.src}
                 className="bf-proof-slide"
                 tabIndex={0}
-                onMouseEnter={() => setLightboxIndex(i)}
                 onClick={() => setLightboxIndex(i)}
               >
                 <img src={shot.src} alt={shot.alt} loading="lazy" />
