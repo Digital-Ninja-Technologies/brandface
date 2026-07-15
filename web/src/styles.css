@@ -985,13 +985,23 @@
   font-size: 13px;
   color: var(--muted-3);
 }
-.bf-proof-grid {
+.bf-proof-slider-wrap {
+  position: relative;
   margin-top: 22px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 20px;
 }
-.bf-proof-placeholder {
+.bf-proof-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-snap-type: x mandatory;
+  padding: 24px;
+  margin: -24px;
+  scrollbar-width: thin;
+}
+.bf-proof-slide {
+  flex: 0 0 auto;
+  width: clamp(140px, 22vw, 220px);
   aspect-ratio: 4 / 5;
   border-radius: 14px;
   background: var(--card-bg);
@@ -1000,16 +1010,59 @@
   place-items: center;
   text-align: center;
   padding: 20px;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.3s ease, border-style 0.3s ease,
+    box-shadow 0.3s ease;
 }
-.bf-proof-placeholder .glyph {
+.bf-proof-slide:hover,
+.bf-proof-slide:focus-visible {
+  transform: scale(1.14);
+  border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+  border-style: solid;
+  box-shadow: 0 24px 48px -18px var(--shadow-color);
+  z-index: 2;
+  position: relative;
+}
+.bf-proof-slide .glyph {
   font-size: 26px;
   color: var(--muted-4);
 }
-.bf-proof-placeholder .caption {
+.bf-proof-slide .caption {
   margin-top: 10px;
   font-size: 12.5px;
   color: var(--muted-3);
   line-height: 1.5;
+}
+.bf-proof-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--bg);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.bf-proof-slider-arrow:hover {
+  background: color-mix(in srgb, var(--gold) 15%, transparent);
+  border-color: color-mix(in srgb, var(--gold) 45%, transparent);
+}
+.bf-proof-slider-arrow.left {
+  left: -19px;
+}
+.bf-proof-slider-arrow.right {
+  right: -19px;
+}
+@media (max-width: 640px) {
+  .bf-proof-slider-arrow {
+    display: none;
+  }
 }
 
 /* ============ book / final cta ============ */

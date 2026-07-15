@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import Reveal from './Reveal.jsx';
 
 const TESTIMONIALS = [
@@ -24,7 +25,16 @@ const TESTIMONIALS = [
   },
 ];
 
+function scrollByAmount(ref, dir) {
+  const el = ref.current;
+  if (!el) return;
+  const amount = Math.min(el.clientWidth * 0.8, 400) * dir;
+  el.scrollBy({ left: amount, behavior: 'smooth' });
+}
+
 export default function Testimonials() {
+  const sliderRef = useRef(null);
+
   return (
     <section id="proof" className="bf-section bf-testimonials">
       <div className="bf-testimonials-glow" />
@@ -58,20 +68,38 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <div className="bf-proof-grid">
-          {[0, 90, 180, 270].map((delay) => (
-            <Reveal key={delay} delay={delay} className="bf-proof-placeholder">
-              <div>
-                <div className="glyph">▦</div>
-                <div className="caption">
-                  Client screenshot
-                  <br />
-                  placeholder
+        <Reveal className="bf-proof-slider-wrap">
+          <button
+            type="button"
+            className="bf-proof-slider-arrow left"
+            aria-label="Scroll screenshots left"
+            onClick={() => scrollByAmount(sliderRef, -1)}
+          >
+            ‹
+          </button>
+          <div className="bf-proof-slider" ref={sliderRef}>
+            {[0, 1, 2, 3].map((i) => (
+              <div key={i} className="bf-proof-slide" tabIndex={0}>
+                <div>
+                  <div className="glyph">▦</div>
+                  <div className="caption">
+                    Client screenshot
+                    <br />
+                    placeholder
+                  </div>
                 </div>
               </div>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </div>
+          <button
+            type="button"
+            className="bf-proof-slider-arrow right"
+            aria-label="Scroll screenshots right"
+            onClick={() => scrollByAmount(sliderRef, 1)}
+          >
+            ›
+          </button>
+        </Reveal>
       </div>
     </section>
   );
