@@ -903,17 +903,6 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.bf-testimonials-badge .tag {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: none;
-  color: var(--muted-3);
-  background: var(--border);
-  border: 1px solid var(--border-strong);
-  padding: 3px 8px;
-  border-radius: 100px;
-}
 .bf-testimonials h2 {
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 700;
@@ -929,65 +918,9 @@
   color: var(--muted-3);
   max-width: 56ch;
 }
-.bf-testimonial-grid {
-  margin-top: 48px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-.bf-testimonial-card {
-  padding: 32px 30px;
-  border-radius: 14px;
-  background: var(--card-bg);
-  border: 1px solid var(--border-strong);
-  display: flex;
-  flex-direction: column;
-}
-.bf-testimonial-stars {
-  color: var(--gold-text);
-  font-size: 15px;
-  letter-spacing: 2px;
-}
-.bf-testimonial-quote {
-  margin-top: 16px;
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 18px;
-  line-height: 1.55;
-  color: var(--text-strong);
-  flex: 1;
-}
-.bf-testimonial-person {
-  margin-top: 24px;
-  display: flex;
-  align-items: center;
-  gap: 13px;
-}
-.bf-testimonial-avatar {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--gold) 18%, transparent);
-  border: 1px solid color-mix(in srgb, var(--gold) 30%, transparent);
-  display: grid;
-  place-items: center;
-  font-family: 'Inter', system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--gold-text);
-  flex-shrink: 0;
-}
-.bf-testimonial-person .name {
-  font-weight: 700;
-  font-size: 15px;
-  color: var(--text);
-}
-.bf-testimonial-person .meta {
-  font-size: 13px;
-  color: var(--muted-3);
-}
 .bf-proof-slider-wrap {
   position: relative;
-  margin-top: 22px;
+  margin-top: 48px;
 }
 .bf-proof-slider {
   display: flex;

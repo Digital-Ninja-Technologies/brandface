@@ -1,30 +1,6 @@
 import { useRef } from 'react';
 import Reveal from './Reveal.jsx';
 
-const TESTIMONIALS = [
-  {
-    initials: 'DM',
-    quote:
-      '"Placeholder testimonial: a client describing the case volume and pipeline the system created for their firm. Replace with the real quote."',
-    name: 'Client Name',
-    meta: 'Firm name · Personal Injury',
-  },
-  {
-    initials: 'JD',
-    quote:
-      '"Placeholder testimonial: a client speaking to how hands-off the process was while results kept compounding. Replace with the real quote."',
-    name: 'Client Name',
-    meta: 'Firm name · Real Estate',
-  },
-  {
-    initials: 'AB',
-    quote:
-      '"Placeholder testimonial: a client describing the automation layer and how no lead goes cold anymore. Replace with the real quote."',
-    name: 'Client Name',
-    meta: 'Firm name · Medical Practice',
-  },
-];
-
 const PROOF_SCREENSHOTS = [
   { src: '/assets/IMG_1874.png', alt: 'Instagram professional dashboard: 230.7K views, 7.0K interactions, 452 new followers over 30 days' },
   { src: '/assets/IMG_1875.jpeg', alt: 'Key metrics: 205K post views, up 9269% month over month' },
@@ -53,33 +29,13 @@ export default function Testimonials() {
       <div className="bf-testimonials-glow" />
       <div className="bf-container-mid" style={{ position: 'relative' }}>
         <div className="bf-center">
-          <Reveal className="bf-testimonials-badge">
-            Testimonials &amp; additional proof
-            <span className="tag">Quotes are placeholder</span>
-          </Reveal>
+          <Reveal className="bf-testimonials-badge">Additional proof</Reveal>
           <Reveal as="h2" delay={80}>
-            What our clients say.
+            The receipts.
           </Reveal>
           <Reveal as="p" delay={140}>
-            Real results below. Testimonial quotes and headshots are still placeholder copy, send those over
-            whenever you're ready.
+            Screenshots straight from the client's own accounts, not slides we made ourselves.
           </Reveal>
-        </div>
-
-        <div className="bf-testimonial-grid">
-          {TESTIMONIALS.map((t, i) => (
-            <Reveal key={t.name + t.meta} delay={i * 120} className="bf-testimonial-card">
-              <div className="bf-testimonial-stars">★★★★★</div>
-              <p className="bf-testimonial-quote">{t.quote}</p>
-              <div className="bf-testimonial-person">
-                <div className="bf-testimonial-avatar">{t.initials}</div>
-                <div>
-                  <div className="name">{t.name}</div>
-                  <div className="meta">{t.meta}</div>
-                </div>
-              </div>
-            </Reveal>
-          ))}
         </div>
 
         <Reveal className="bf-proof-slider-wrap">
