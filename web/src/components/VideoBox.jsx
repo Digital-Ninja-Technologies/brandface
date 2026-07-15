@@ -4,7 +4,7 @@ import PlayIcon from './PlayIcon.jsx';
 import PauseIcon from './PauseIcon.jsx';
 import useIsMobile from '../hooks/useIsMobile.js';
 import requestFullscreen from '../hooks/requestFullscreen.js';
-import { DRIVE_VIDEO_EMBED_URL, DRIVE_VIDEO_VIEW_URL } from '../siteConfig.js';
+import { VIDEO_EMBED_URL, VIDEO_VIEW_URL } from '../siteConfig.js';
 
 // Desktop keeps the corner fullscreen button (real Fullscreen API support).
 // Mobile browsers mostly don't support fullscreening an arbitrary element, so that
@@ -26,13 +26,20 @@ export default function VideoBox({ title }) {
           className="bf-video-fullscreen-btn"
           aria-label="Watch full screen"
           title="Watch full screen"
-          onClick={() => requestFullscreen(boxRef.current, DRIVE_VIDEO_VIEW_URL)}
+          onClick={() => requestFullscreen(boxRef.current, VIDEO_VIEW_URL)}
         >
           <FullscreenIcon size={16} />
         </button>
       )}
 
-      {showIframe && <iframe src={DRIVE_VIDEO_EMBED_URL} allow="autoplay" allowFullScreen title={title} />}
+      {showIframe && (
+        <iframe
+          src={VIDEO_EMBED_URL}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          title={title}
+        />
+      )}
 
       {isMobile && !playing && (
         <button type="button" className="bf-video-play-btn" aria-label="Play video" onClick={() => setPlaying(true)}>
