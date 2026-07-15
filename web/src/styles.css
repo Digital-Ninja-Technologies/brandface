@@ -216,6 +216,11 @@
     aspect-ratio: 4 / 3;
   }
 }
+.bf-video-box.bf-video-box-vertical {
+  aspect-ratio: 9 / 16;
+  max-width: 320px;
+  margin: 0 auto;
+}
 .bf-video-box iframe {
   position: absolute;
   inset: 0;
@@ -988,6 +993,28 @@
   .bf-proof-slider-arrow {
     display: none;
   }
+}
+
+/* ============ client work (short-form video examples) ============ */
+.bf-clientwork-head h2 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(28px, 4.4vw, 52px);
+  line-height: 1.08;
+  margin-top: 18px;
+  color: var(--text);
+}
+.bf-clientwork-grid {
+  margin-top: 48px;
+}
+.bf-clientwork-item {
+  text-align: center;
+}
+.bf-clientwork-item h3 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2.2vw, 22px);
+  margin: 0 0 20px;
+  color: var(--text);
 }
 
 /* ============ book / final cta ============ */

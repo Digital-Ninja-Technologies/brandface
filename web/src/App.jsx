@@ -13,6 +13,7 @@ import Guarantee from './components/Guarantee.jsx';
 import Roi from './components/Roi.jsx';
 import WhoDifferentiator from './components/WhoDifferentiator.jsx';
 import Testimonials from './components/Testimonials.jsx';
+import ClientWork from './components/ClientWork.jsx';
 import BookCta from './components/BookCta.jsx';
 import Footer from './components/Footer.jsx';
 import BookModal from './components/BookModal.jsx';
@@ -34,6 +35,7 @@ function App() {
         <Roi />
         <WhoDifferentiator />
         <Testimonials />
+        <ClientWork />
         <BookCta />
         <Footer />
         <BookModal />

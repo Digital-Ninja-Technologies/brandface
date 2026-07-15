@@ -11,7 +11,12 @@ import { VIDEO_EMBED_URL, VIDEO_VIEW_URL } from '../siteConfig.js';
 // button used to fall back to opening the video on drive.google.com instead -
 // confusing since it looked like a video control but left the page. Mobile now gets
 // a real play/pause toggle: the iframe isn't even mounted until the user taps play.
-export default function VideoBox({ title }) {
+export default function VideoBox({
+  title,
+  embedUrl = VIDEO_EMBED_URL,
+  viewUrl = VIDEO_VIEW_URL,
+  className = '',
+}) {
   const isMobile = useIsMobile();
   const boxRef = useRef(null);
   const [playing, setPlaying] = useState(false);
@@ -19,14 +24,14 @@ export default function VideoBox({ title }) {
   const showIframe = !isMobile || playing;
 
   return (
-    <div className="bf-video-box" ref={boxRef}>
+    <div className={`bf-video-box ${className}`} ref={boxRef}>
       {!isMobile && (
         <button
           type="button"
           className="bf-video-fullscreen-btn"
           aria-label="Watch full screen"
           title="Watch full screen"
-          onClick={() => requestFullscreen(boxRef.current, VIDEO_VIEW_URL)}
+          onClick={() => requestFullscreen(boxRef.current, viewUrl)}
         >
           <FullscreenIcon size={16} />
         </button>
@@ -34,7 +39,7 @@ export default function VideoBox({ title }) {
 
       {showIframe && (
         <iframe
-          src={VIDEO_EMBED_URL}
+          src={embedUrl}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           title={title}
