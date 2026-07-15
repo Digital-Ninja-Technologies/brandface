@@ -25,6 +25,19 @@ const TESTIMONIALS = [
   },
 ];
 
+const PROOF_SCREENSHOTS = [
+  { src: '/assets/IMG_1874.png', alt: 'Instagram professional dashboard: 230.7K views, 7.0K interactions, 452 new followers over 30 days' },
+  { src: '/assets/IMG_1875.jpeg', alt: 'Key metrics: 205K post views, up 9269% month over month' },
+  { src: '/assets/IMG_2623.jpeg', alt: 'Analytics overview: 583K post views over a 28-day period' },
+  { src: '/assets/IMG_3422.PNG', alt: 'Views breakdown: 3,590,854 views over the last 90 days' },
+  { src: '/assets/IMG_3423.PNG', alt: 'Insights overview: 3,839,148 views and 11,357 net new followers' },
+  { src: '/assets/IMG_3488.PNG', alt: "Demetrius McCloud's Instagram profile, The Legal Sniper, 23K followers" },
+  { src: '/assets/IMG_3490.PNG', alt: "Attorney's social profile with 13K followers and 299.1K likes" },
+  { src: '/assets/IMG_3491.PNG', alt: "Demetrius McCloud's verified Instagram profile" },
+  { src: '/assets/IMG_3492.PNG', alt: 'All-content overview: 3,742,020 views and 10,808 net new followers' },
+  { src: '/assets/IMG_3493.PNG', alt: "Demetrius McCloud's Instagram profile, dark mode, 7,972 followers" },
+];
+
 function scrollByAmount(ref, dir) {
   const el = ref.current;
   if (!el) return;
@@ -42,13 +55,14 @@ export default function Testimonials() {
         <div className="bf-center">
           <Reveal className="bf-testimonials-badge">
             Testimonials &amp; additional proof
-            <span className="tag">Placeholder</span>
+            <span className="tag">Quotes are placeholder</span>
           </Reveal>
           <Reveal as="h2" delay={80}>
             What our clients say.
           </Reveal>
           <Reveal as="p" delay={140}>
-            Dummy content for now. Real testimonial quotes, headshots, and client screenshots will drop in here.
+            Real results below. Testimonial quotes and headshots are still placeholder copy, send those over
+            whenever you're ready.
           </Reveal>
         </div>
 
@@ -78,16 +92,9 @@ export default function Testimonials() {
             ‹
           </button>
           <div className="bf-proof-slider" ref={sliderRef}>
-            {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="bf-proof-slide" tabIndex={0}>
-                <div>
-                  <div className="glyph">▦</div>
-                  <div className="caption">
-                    Client screenshot
-                    <br />
-                    placeholder
-                  </div>
-                </div>
+            {PROOF_SCREENSHOTS.map((shot) => (
+              <div key={shot.src} className="bf-proof-slide" tabIndex={0}>
+                <img src={shot.src} alt={shot.alt} loading="lazy" />
               </div>
             ))}
           </div>

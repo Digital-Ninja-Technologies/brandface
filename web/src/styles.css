@@ -1001,38 +1001,30 @@
 }
 .bf-proof-slide {
   flex: 0 0 auto;
-  width: clamp(140px, 22vw, 220px);
-  aspect-ratio: 4 / 5;
+  width: clamp(120px, 17vw, 180px);
+  aspect-ratio: 9 / 16;
   border-radius: 14px;
   background: var(--card-bg);
-  border: 1px dashed var(--border-strong);
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 20px;
+  border: 1px solid var(--border-strong);
+  overflow: hidden;
   scroll-snap-align: start;
   cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.3s ease, border-style 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.bf-proof-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
 }
 .bf-proof-slide:hover,
 .bf-proof-slide:focus-visible {
   transform: scale(1.14);
   border-color: color-mix(in srgb, var(--gold) 55%, transparent);
-  border-style: solid;
   box-shadow: 0 24px 48px -18px var(--shadow-color);
   z-index: 2;
   position: relative;
-}
-.bf-proof-slide .glyph {
-  font-size: 26px;
-  color: var(--muted-4);
-}
-.bf-proof-slide .caption {
-  margin-top: 10px;
-  font-size: 12.5px;
-  color: var(--muted-3);
-  line-height: 1.5;
 }
 .bf-proof-slider-arrow {
   position: absolute;
