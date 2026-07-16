@@ -1,21 +1,18 @@
 import { useState } from 'react';
 import { CALENDLY_URL, WEB3FORMS_ACCESS_KEY } from '../siteConfig.js';
 
-const REVENUE_OPTIONS = ['Under $25K', '$25K–$50K', '$50K–$100K', '$100K+'];
-const CONSTRAINT_OPTIONS = [
-  'Not enough leads',
-  "Leads aren't qualified",
-  "Can't convert leads to signed cases",
-  'No time to market myself',
-];
+const DECISION_MAKER_OPTIONS = ['Yes', 'No, I share decisions', 'No, someone else decides'];
+const TIMELINE_OPTIONS = ['Immediately', 'Within 30 days', 'Just exploring'];
 
 const EMPTY_FORM = {
   fullName: '',
-  phone: '',
   email: '',
+  phone: '',
   firmName: '',
-  monthlyRevenue: '',
-  constraint: '',
+  bottleneck: '',
+  decisionMaker: '',
+  timeline: '',
+  casesPerMonth: '',
 };
 
 async function submitLead(form) {
@@ -27,11 +24,13 @@ async function submitLead(form) {
       subject: `New strategy call lead: ${form.firmName || form.fullName}`,
       from_name: 'BrandFace Media site',
       'Full name': form.fullName,
-      'Best number to reach them directly': form.phone,
       Email: form.email,
-      'Firm name': form.firmName,
-      'Current monthly revenue': form.monthlyRevenue,
-      '#1 constraint': form.constraint,
+      Phone: form.phone,
+      'Law firm name': form.firmName,
+      '#1 marketing bottleneck': form.bottleneck,
+      'Sole decision-maker for marketing': form.decisionMaker,
+      'How soon looking to get started': form.timeline,
+      'New cases/clients wanted per month': form.casesPerMonth,
     }),
   });
   const data = await res.json().catch(() => null);
@@ -110,19 +109,6 @@ export default function BookingFlow({
         />
       </div>
       <div className="bf-field">
-        <label htmlFor="bf-phone">Best number to reach you directly</label>
-        <input
-          id="bf-phone"
-          name="phone"
-          type="tel"
-          autoComplete="tel"
-          placeholder="(555) 123-4567"
-          required
-          value={form.phone}
-          onChange={update('phone')}
-        />
-      </div>
-      <div className="bf-field">
         <label htmlFor="bf-email">Email</label>
         <input
           id="bf-email"
@@ -136,7 +122,20 @@ export default function BookingFlow({
         />
       </div>
       <div className="bf-field">
-        <label htmlFor="bf-firmName">Firm name</label>
+        <label htmlFor="bf-phone">Phone number</label>
+        <input
+          id="bf-phone"
+          name="phone"
+          type="tel"
+          autoComplete="tel"
+          placeholder="(555) 123-4567"
+          required
+          value={form.phone}
+          onChange={update('phone')}
+        />
+      </div>
+      <div className="bf-field">
+        <label htmlFor="bf-firmName">Law firm name</label>
         <input
           id="bf-firmName"
           name="firmName"
@@ -149,12 +148,30 @@ export default function BookingFlow({
         />
       </div>
       <div className="bf-field">
-        <label htmlFor="bf-revenue">Current monthly revenue</label>
-        <select id="bf-revenue" name="monthlyRevenue" required value={form.monthlyRevenue} onChange={update('monthlyRevenue')}>
+        <label htmlFor="bf-bottleneck">What's your #1 marketing bottleneck right now?</label>
+        <input
+          id="bf-bottleneck"
+          name="bottleneck"
+          type="text"
+          placeholder="e.g. Not enough inbound leads"
+          required
+          value={form.bottleneck}
+          onChange={update('bottleneck')}
+        />
+      </div>
+      <div className="bf-field">
+        <label htmlFor="bf-decisionMaker">Are you the sole decision-maker for marketing decisions at your firm?</label>
+        <select
+          id="bf-decisionMaker"
+          name="decisionMaker"
+          required
+          value={form.decisionMaker}
+          onChange={update('decisionMaker')}
+        >
           <option value="" disabled>
             Select one
           </option>
-          {REVENUE_OPTIONS.map((o) => (
+          {DECISION_MAKER_OPTIONS.map((o) => (
             <option key={o} value={o}>
               {o}
             </option>
@@ -162,17 +179,29 @@ export default function BookingFlow({
         </select>
       </div>
       <div className="bf-field">
-        <label htmlFor="bf-constraint">What's your #1 constraint right now?</label>
-        <select id="bf-constraint" name="constraint" required value={form.constraint} onChange={update('constraint')}>
+        <label htmlFor="bf-timeline">How soon are you looking to get started?</label>
+        <select id="bf-timeline" name="timeline" required value={form.timeline} onChange={update('timeline')}>
           <option value="" disabled>
             Select one
           </option>
-          {CONSTRAINT_OPTIONS.map((o) => (
+          {TIMELINE_OPTIONS.map((o) => (
             <option key={o} value={o}>
               {o}
             </option>
           ))}
         </select>
+      </div>
+      <div className="bf-field">
+        <label htmlFor="bf-casesPerMonth">Roughly how many new cases/clients are you looking to add per month?</label>
+        <input
+          id="bf-casesPerMonth"
+          name="casesPerMonth"
+          type="text"
+          placeholder="e.g. 10"
+          required
+          value={form.casesPerMonth}
+          onChange={update('casesPerMonth')}
+        />
       </div>
       {error && <p className="bf-field-error">{error}</p>}
       <button type="submit" className="bf-btn-gold-lg bf-booking-submit" disabled={submitting}>
