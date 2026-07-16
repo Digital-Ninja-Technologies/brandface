@@ -157,8 +157,16 @@
   font-style: italic;
   font-family: 'Inter', system-ui, sans-serif;
 }
+.bf-hero-watch-note {
+  margin: 22px auto 0;
+  max-width: 54ch;
+  font-size: clamp(15px, 1.9vw, 17px);
+  font-weight: 700;
+  line-height: 1.55;
+  color: var(--gold-text);
+}
 .bf-hero-sub {
-  margin: 26px auto 0;
+  margin: 18px auto 0;
   max-width: 60ch;
   font-size: clamp(16px, 2vw, 20px);
   line-height: 1.6;

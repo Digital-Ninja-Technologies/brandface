@@ -23,12 +23,17 @@ export default function Hero() {
           <VideoBox title="BrandFace Media breakdown" />
         </Reveal>
 
-        <Reveal as="p" delay={220} className="bf-hero-sub">
+        <Reveal as="p" delay={200} className="bf-hero-watch-note">
+          Watch this before booking — it explains exactly how the program works and whether you're a fit. 3 minutes
+          now saves you the wrong call later.
+        </Reveal>
+
+        <Reveal as="p" delay={240} className="bf-hero-sub">
           A done-for-you growth engine built exclusively for ambitious law firms, handling the content, ads, and
           automation most agencies never touch.
         </Reveal>
 
-        <Reveal delay={280} className="bf-hero-ctas">
+        <Reveal delay={300} className="bf-hero-ctas">
           <a
             href="#book"
             className="bf-btn-gold-lg"
