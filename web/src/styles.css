@@ -191,6 +191,10 @@
   max-width: 920px;
   position: relative;
 }
+.bf-video-frame.bf-video-frame-hero {
+  margin-top: 32px;
+  max-width: min(1040px, 94vw);
+}
 .bf-video-frame-glow {
   position: absolute;
   inset: -1px;

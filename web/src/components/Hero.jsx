@@ -19,12 +19,16 @@ export default function Hero() {
           <span className="bf-italic-gold">Guaranteed.</span>
         </Reveal>
 
-        <Reveal as="p" delay={160} className="bf-hero-sub">
-          A done-for-you growth engine built exclusively for ambitious law firms. We handle the content, the ads,
-          and the automation that most agencies never touch. You show up and sign cases.
+        <Reveal delay={160} className="bf-video-frame bf-video-frame-hero">
+          <VideoBox title="BrandFace Media breakdown" />
         </Reveal>
 
-        <Reveal delay={220} className="bf-hero-ctas">
+        <Reveal as="p" delay={220} className="bf-hero-sub">
+          A done-for-you growth engine built exclusively for ambitious law firms, handling the content, ads, and
+          automation most agencies never touch.
+        </Reveal>
+
+        <Reveal delay={280} className="bf-hero-ctas">
           <a
             href="#book"
             className="bf-btn-gold-lg"
@@ -35,10 +39,6 @@ export default function Hero() {
           >
             Book your strategy call →
           </a>
-        </Reveal>
-
-        <Reveal delay={300} className="bf-video-frame">
-          <VideoBox title="BrandFace Media breakdown" />
         </Reveal>
       </div>
     </header>
