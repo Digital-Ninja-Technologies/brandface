@@ -144,11 +144,11 @@
 .bf-hero h1 {
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 800;
-  font-size: clamp(28px, 6.4vw, 74px);
+  font-size: clamp(16px, 4.6vw, 56px);
   line-height: 1.04;
   letter-spacing: -0.01em;
   margin: 26px auto 0;
-  max-width: 15ch;
+  max-width: min(1000px, 94vw);
   color: var(--text);
 }
 .bf-hero h1 .bf-italic-gold {
