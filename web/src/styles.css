@@ -217,7 +217,10 @@
 }
 .bf-video-frame.bf-video-frame-hero {
   margin-top: 32px;
-  max-width: min(1040px, 94vw);
+  margin-left: -5%;
+  margin-right: -5%;
+  width: 110%;
+  max-width: none;
 }
 .bf-video-frame-glow {
   position: absolute;
