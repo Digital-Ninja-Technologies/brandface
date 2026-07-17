@@ -187,6 +187,11 @@
     animation: none;
   }
 }
+@media (max-width: 640px) {
+  .bf-hero-watch-note {
+    font-size: 32px;
+  }
+}
 .bf-hero-sub {
   margin: 18px auto 0;
   max-width: 60ch;
