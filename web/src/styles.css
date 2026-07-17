@@ -188,7 +188,7 @@
   }
 }
 @media (max-width: 640px) {
-  .bf-hero-watch-note {
+  .bf-hero h1 {
     font-size: 32px;
   }
 }
