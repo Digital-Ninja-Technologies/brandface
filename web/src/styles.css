@@ -144,7 +144,7 @@
 .bf-hero h1 {
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 800;
-  font-size: clamp(36px, 6.4vw, 82px);
+  font-size: clamp(28px, 6.4vw, 74px);
   line-height: 1.04;
   letter-spacing: -0.01em;
   margin: 26px auto 0;
@@ -165,6 +165,11 @@
   line-height: 1.55;
   color: var(--gold-text);
   animation: bf-flicker 4s infinite;
+}
+.bf-watch-note-emphasis {
+  font-size: 1.25em;
+  font-style: italic;
+  font-weight: 900;
 }
 @keyframes bf-flicker {
   0%, 89%, 100% { opacity: 1; }
