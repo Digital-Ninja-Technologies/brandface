@@ -11,6 +11,11 @@ import { VIDEO_EMBED_URL, VIDEO_VIEW_URL } from '../siteConfig.js';
 // button used to fall back to opening the video on drive.google.com instead -
 // confusing since it looked like a video control but left the page. Mobile now gets
 // a real play/pause toggle: the iframe isn't even mounted until the user taps play.
+function thumbnailFor(embedUrl) {
+  const match = embedUrl.match(/embed\/([a-zA-Z0-9_-]+)/);
+  return match ? `https://img.youtube.com/vi/${match[1]}/hqdefault.jpg` : null;
+}
+
 export default function VideoBox({
   title,
   embedUrl = VIDEO_EMBED_URL,
@@ -22,9 +27,14 @@ export default function VideoBox({
   const [playing, setPlaying] = useState(false);
 
   const showIframe = !isMobile || playing;
+  const thumbnail = thumbnailFor(embedUrl);
 
   return (
     <div className={`bf-video-box ${className}`} ref={boxRef}>
+      {!showIframe && thumbnail && (
+        <img className="bf-video-thumbnail" src={thumbnail} alt="" aria-hidden="true" />
+      )}
+
       {!isMobile && (
         <button
           type="button"
