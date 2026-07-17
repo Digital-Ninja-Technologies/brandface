@@ -33,7 +33,7 @@ export default function Testimonials() {
         <div className="bf-center">
           <Reveal className="bf-testimonials-badge">Testimonials and additional proof</Reveal>
           <Reveal as="h2" delay={80}>
-            The receipts.
+            Here's the kind of reach we generate for our clients.
           </Reveal>
           <Reveal as="p" delay={140}>
             Screenshots straight from the client's own accounts.
