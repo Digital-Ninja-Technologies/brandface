@@ -161,9 +161,25 @@
   margin: 22px auto 0;
   max-width: 54ch;
   font-size: clamp(15px, 1.9vw, 17px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.55;
   color: var(--gold-text);
+  animation: bf-flicker 4s infinite;
+}
+@keyframes bf-flicker {
+  0%, 89%, 100% { opacity: 1; }
+  90% { opacity: 0.35; }
+  91% { opacity: 1; }
+  92% { opacity: 0.45; }
+  93% { opacity: 1; }
+  95% { opacity: 1; }
+  95.5% { opacity: 0.5; }
+  96% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bf-hero-watch-note {
+    animation: none;
+  }
 }
 .bf-hero-sub {
   margin: 18px auto 0;
