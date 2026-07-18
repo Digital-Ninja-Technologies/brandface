@@ -985,7 +985,7 @@
   padding: 24px 0;
 }
 .bf-proof-slide {
-  width: clamp(160px, 22vw, 260px);
+  width: clamp(220px, 27vw, 300px);
   border-radius: 14px;
   background: var(--card-bg);
   border: 1px solid var(--border-strong);
@@ -1007,6 +1007,14 @@
   box-shadow: 0 24px 48px -18px var(--shadow-color);
   z-index: 2;
   position: relative;
+}
+@media (max-width: 640px) {
+  .bf-proof-gallery {
+    gap: 24px;
+  }
+  .bf-proof-slide {
+    width: min(88vw, 340px);
+  }
 }
 
 .bf-proof-view-all {
