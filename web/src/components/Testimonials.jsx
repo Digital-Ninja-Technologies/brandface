@@ -3,10 +3,7 @@ import Reveal from './Reveal.jsx';
 import ScreenshotLightbox from './ScreenshotLightbox.jsx';
 
 const PROOF_SCREENSHOTS = [
-  { src: '/assets/IMG_1874.png', alt: 'Instagram professional dashboard: 230.7K views, 7.0K interactions, 452 new followers over 30 days' },
-  { src: '/assets/IMG_1875.jpeg', alt: 'Key metrics: 205K post views, up 9269% month over month' },
-  { src: '/assets/IMG_2623.jpeg', alt: 'Analytics overview: 583K post views over a 28-day period' },
-  { src: '/assets/IMG_3422.PNG', alt: 'Views breakdown: 3,590,854 views over the last 90 days' },
+
   { src: '/assets/IMG_3423.PNG', alt: 'Insights overview: 3,839,148 views and 11,357 net new followers' },
   { src: '/assets/IMG_3488.PNG', alt: "Demetrius McCloud's Instagram profile, The Legal Sniper, 23K followers" },
   { src: '/assets/IMG_3490.PNG', alt: "Attorney's social profile with 13K followers and 299.1K likes" },
