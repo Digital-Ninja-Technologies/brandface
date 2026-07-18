@@ -972,76 +972,41 @@
   color: var(--muted-3);
   max-width: 56ch;
 }
-.bf-proof-slider-wrap {
+.bf-proof-gallery-wrap {
   position: relative;
   margin-top: 48px;
 }
-.bf-proof-slider {
+.bf-proof-gallery {
   display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  overflow-y: visible;
-  scroll-snap-type: x mandatory;
-  padding: 24px;
-  margin: -24px;
-  scrollbar-width: thin;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(18px, 3vw, 32px);
+  padding: 24px 0;
 }
 .bf-proof-slide {
-  flex: 0 0 auto;
-  width: clamp(120px, 17vw, 180px);
-  aspect-ratio: 9 / 16;
+  width: clamp(160px, 22vw, 260px);
   border-radius: 14px;
   background: var(--card-bg);
   border: 1px solid var(--border-strong);
-  overflow: hidden;
-  scroll-snap-align: start;
+  overflow: visible;
   cursor: pointer;
   transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .bf-proof-slide img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
+  height: auto;
+  object-fit: contain;
   display: block;
+  border-radius: 13px;
 }
 .bf-proof-slide:hover,
 .bf-proof-slide:focus-visible {
-  transform: scale(1.14);
+  transform: translateY(-4px);
   border-color: color-mix(in srgb, var(--gold) 55%, transparent);
   box-shadow: 0 24px 48px -18px var(--shadow-color);
   z-index: 2;
   position: relative;
-}
-.bf-proof-slider-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 3;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid var(--border-strong);
-  background: var(--bg);
-  color: var(--text);
-  display: grid;
-  place-items: center;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-.bf-proof-slider-arrow:hover {
-  background: color-mix(in srgb, var(--gold) 15%, transparent);
-  border-color: color-mix(in srgb, var(--gold) 45%, transparent);
-}
-.bf-proof-slider-arrow.left {
-  left: -19px;
-}
-.bf-proof-slider-arrow.right {
-  right: -19px;
-}
-@media (max-width: 640px) {
-  .bf-proof-slider-arrow {
-    display: none;
-  }
 }
 
 .bf-proof-view-all {

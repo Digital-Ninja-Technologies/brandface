@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import Reveal from './Reveal.jsx';
 import ScreenshotLightbox from './ScreenshotLightbox.jsx';
 
@@ -9,15 +9,7 @@ const PROOF_SCREENSHOTS = [
   { src: '/assets/IMG_3493.PNG', alt: "Demetrius McCloud's Instagram profile, dark mode, 7,972 followers" },
 ];
 
-function scrollByAmount(ref, dir) {
-  const el = ref.current;
-  if (!el) return;
-  const amount = Math.min(el.clientWidth * 0.8, 400) * dir;
-  el.scrollBy({ left: amount, behavior: 'smooth' });
-}
-
 export default function Testimonials() {
-  const sliderRef = useRef(null);
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
   return (
@@ -34,16 +26,8 @@ export default function Testimonials() {
           </Reveal>
         </div>
 
-        <Reveal className="bf-proof-slider-wrap">
-          <button
-            type="button"
-            className="bf-proof-slider-arrow left"
-            aria-label="Scroll screenshots left"
-            onClick={() => scrollByAmount(sliderRef, -1)}
-          >
-            ‹
-          </button>
-          <div className="bf-proof-slider" ref={sliderRef}>
+        <Reveal className="bf-proof-gallery-wrap">
+          <div className="bf-proof-gallery">
             {PROOF_SCREENSHOTS.map((shot, i) => (
               <div
                 key={shot.src}
@@ -55,14 +39,6 @@ export default function Testimonials() {
               </div>
             ))}
           </div>
-          <button
-            type="button"
-            className="bf-proof-slider-arrow right"
-            aria-label="Scroll screenshots right"
-            onClick={() => scrollByAmount(sliderRef, 1)}
-          >
-            ›
-          </button>
         </Reveal>
 
         <Reveal delay={100} className="bf-proof-view-all">
