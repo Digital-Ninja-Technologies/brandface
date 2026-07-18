@@ -6,7 +6,6 @@ const PROOF_SCREENSHOTS = [
   
   { src: '/assets/IMG_3488.PNG', alt: "Demetrius McCloud's Instagram profile, The Legal Sniper, 23K followers" },
   { src: '/assets/IMG_3490.PNG', alt: "Attorney's social profile with 13K followers and 299.1K likes" },
-  { src: '/assets/IMG_3491.PNG', alt: "Demetrius McCloud's verified Instagram profile" },
   { src: '/assets/IMG_3493.PNG', alt: "Demetrius McCloud's Instagram profile, dark mode, 7,972 followers" },
 ];
 
