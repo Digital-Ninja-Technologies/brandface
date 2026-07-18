@@ -25,7 +25,7 @@ export default function Hero() {
 
         <Reveal as="p" delay={200} className="bf-hero-watch-note">
           Watch this before booking — it explains exactly how the program works and whether you're a fit.{' '}
-          <span className="bf-watch-note-emphasis">3 minutes</span> now saves you the wrong call later.
+          <span className="bf-watch-note-emphasis">6 minutes</span> now saves you the wrong call later.
         </Reveal>
 
         <Reveal as="p" delay={240} className="bf-hero-sub">
