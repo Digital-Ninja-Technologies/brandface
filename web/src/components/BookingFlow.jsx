@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CALENDLY_URL, WEB3FORMS_ACCESS_KEY } from '../siteConfig.js';
+import { CALENDLY_URL, FORMSPREE_ENDPOINT } from '../siteConfig.js';
 
 const DECISION_MAKER_OPTIONS = ['Yes', 'No, I share decisions', 'No, someone else decides'];
 const TIMELINE_OPTIONS = ['Immediately', 'Within 30 days', 'Just exploring'];
@@ -16,26 +16,25 @@ const EMPTY_FORM = {
 };
 
 async function submitLead(form) {
-  const res = await fetch('https://api.web3forms.com/submit', {
+  const res = await fetch(FORMSPREE_ENDPOINT, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     body: JSON.stringify({
-      access_key: WEB3FORMS_ACCESS_KEY,
-      subject: `New strategy call lead: ${form.firmName || form.fullName}`,
-      from_name: 'BrandFace Media site',
-      'Full name': form.fullName,
-      Email: form.email,
-      Phone: form.phone,
-      'Law firm name': form.firmName,
-      '#1 marketing bottleneck': form.bottleneck,
-      'Sole decision-maker for marketing': form.decisionMaker,
-      'How soon looking to get started': form.timeline,
-      'New cases/clients wanted per month': form.casesPerMonth,
+      _subject: `New strategy call lead: ${form.firmName || form.fullName}`,
+      source: 'BrandFace Media site',
+      fullName: form.fullName,
+      email: form.email,
+      phone: form.phone,
+      firmName: form.firmName,
+      bottleneck: form.bottleneck,
+      decisionMaker: form.decisionMaker,
+      timeline: form.timeline,
+      casesPerMonth: form.casesPerMonth,
     }),
   });
   const data = await res.json().catch(() => null);
-  if (!res.ok || !data?.success) {
-    throw new Error(data?.message || 'Submission failed');
+  if (!res.ok) {
+    throw new Error(data?.error || 'Submission failed');
   }
 }
 
@@ -63,7 +62,7 @@ export default function BookingFlow({
     try {
       await submitLead(form);
       onSubmitSuccess(form);
-    } catch (err) {
+    } catch {
       setError("Something went wrong sending that. Please try again, or email us directly if it keeps happening.");
     } finally {
       setSubmitting(false);
