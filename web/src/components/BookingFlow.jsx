@@ -15,16 +15,24 @@ const EMPTY_FORM = {
   casesPerMonth: '',
 };
 
+function splitName(fullName) {
+  const parts = fullName.trim().split(/\s+/);
+  return { firstName: parts[0] || '', lastName: parts.slice(1).join(' ') };
+}
+
 async function submitLead(form) {
+  const { firstName, lastName } = splitName(form.fullName);
   const res = await fetch(GHL_WEBHOOK_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       source: 'BrandFace Media site',
-      full_name: form.fullName,
+      name: form.fullName,
+      firstName,
+      lastName,
       email: form.email,
       phone: form.phone,
-      firm_name: form.firmName,
+      companyName: form.firmName,
       marketing_bottleneck: form.bottleneck,
       sole_decision_maker: form.decisionMaker,
       timeline: form.timeline,
