@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CALENDLY_URL, FORMSPREE_ENDPOINT } from '../siteConfig.js';
+import { CALENDLY_URL, GHL_WEBHOOK_URL } from '../siteConfig.js';
 
 const DECISION_MAKER_OPTIONS = ['Yes', 'No, I share decisions', 'No, someone else decides'];
 const TIMELINE_OPTIONS = ['Immediately', 'Within 30 days', 'Just exploring'];
@@ -16,25 +16,23 @@ const EMPTY_FORM = {
 };
 
 async function submitLead(form) {
-  const res = await fetch(FORMSPREE_ENDPOINT, {
+  const res = await fetch(GHL_WEBHOOK_URL, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      _subject: `New strategy call lead: ${form.firmName || form.fullName}`,
       source: 'BrandFace Media site',
-      fullName: form.fullName,
+      full_name: form.fullName,
       email: form.email,
       phone: form.phone,
-      firmName: form.firmName,
-      bottleneck: form.bottleneck,
-      decisionMaker: form.decisionMaker,
+      firm_name: form.firmName,
+      marketing_bottleneck: form.bottleneck,
+      sole_decision_maker: form.decisionMaker,
       timeline: form.timeline,
-      casesPerMonth: form.casesPerMonth,
+      cases_per_month: form.casesPerMonth,
     }),
   });
-  const data = await res.json().catch(() => null);
   if (!res.ok) {
-    throw new Error(data?.error || 'Submission failed');
+    throw new Error('Submission failed');
   }
 }
 

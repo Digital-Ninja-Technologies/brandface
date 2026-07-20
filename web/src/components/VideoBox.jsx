@@ -25,14 +25,21 @@ export default function VideoBox({
   const isMobile = useIsMobile();
   const boxRef = useRef(null);
   const [playing, setPlaying] = useState(false);
+  const [thumbnailFailed, setThumbnailFailed] = useState(false);
 
   const showIframe = !isMobile || playing;
   const thumbnail = thumbnailFor(embedUrl);
 
   return (
     <div className={`bf-video-box ${className}`} ref={boxRef}>
-      {!showIframe && thumbnail && (
-        <img className="bf-video-thumbnail" src={thumbnail} alt="" aria-hidden="true" />
+      {!showIframe && thumbnail && !thumbnailFailed && (
+        <img
+          className="bf-video-thumbnail"
+          src={thumbnail}
+          alt=""
+          aria-hidden="true"
+          onError={() => setThumbnailFailed(true)}
+        />
       )}
 
       {!isMobile && (
