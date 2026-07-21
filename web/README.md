@@ -1,6 +1,6 @@
 # BrandFace Media — Sales Page
 
-React + Vite implementation of the BrandFace Media sales page, built from the Claude Design handoff bundle in the repo root (`README.md`, `chats/`, `project/`).
+React + Vite implementation of the BrandFace Media sales page. (`README.md`, `chats/`, `project/`).
 
 ## Develop
 
