@@ -3,10 +3,11 @@ import Reveal from './Reveal.jsx';
 import ScreenshotLightbox from './ScreenshotLightbox.jsx';
 
 const PROOF_SCREENSHOTS = [
-  
-  { src: '/assets/IMG_3488.PNG', alt: "Demetrius McCloud's Instagram profile, The Legal Sniper, 23K followers" },
-  { src: '/assets/IMG_3490.PNG', alt: "Attorney's social profile with 13K followers and 299.1K likes" },
-  { src: '/assets/IMG_3493.PNG', alt: "Demetrius McCloud's Instagram profile, dark mode, 7,972 followers" },
+  { src: '/assets/IMG_2623.jpeg', alt: 'Analytics overview: 583K post views over a 28-day period' },
+  { src: '/assets/IMG_3422.PNG', alt: 'Views breakdown: 3,590,854 views over the last 90 days' },
+  { src: '/assets/IMG_3423.PNG', alt: 'Insights overview: 3,839,148 views and 11,357 net new followers' },
+  { src: '/assets/IMG_3491.PNG', alt: 'Key metrics: 2M post views, 300.4K likes, and 29.2K shares over 6 months' },
+  { src: '/assets/IMG_3492.PNG', alt: 'All-content overview: 3,742,020 views and 10,808 net new followers' },
 ];
 
 export default function Testimonials() {
