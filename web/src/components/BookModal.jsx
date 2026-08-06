@@ -1,13 +1,19 @@
 import { useBooking } from '../BookingContext.jsx';
 import { CALENDLY_URL, GUARANTEE_CONSULTS, GUARANTEE_DAYS } from '../siteConfig.js';
 
+// Stays mounted at all times (rather than unmounting when closed) so the Calendly
+// iframe loads in the background from page load - it's instant by the time someone
+// actually opens the modal, instead of loading from scratch on every open.
 export default function BookModal() {
   const { modalOpen, closeModal } = useBooking();
 
-  if (!modalOpen) return null;
-
   return (
-    <div className="bf-modal-backdrop" onClick={closeModal}>
+    <div
+      className={`bf-modal-backdrop ${modalOpen ? 'open' : ''}`}
+      onClick={closeModal}
+      aria-hidden={!modalOpen}
+      inert={!modalOpen ? '' : undefined}
+    >
       <div className="bf-modal" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
         <div className="bf-modal-topbar" />
         <button type="button" className="bf-modal-close" aria-label="Close" onClick={closeModal}>
