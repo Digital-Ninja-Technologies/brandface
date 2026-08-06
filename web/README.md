@@ -1,4 +1,4 @@
-# BrandFace Media — Sales Page
+# BrandFace — Sales Page
 
 React + Vite implementation of the BrandFace Media sales page. (`README.md`, `chats/`, `project/`).
 
