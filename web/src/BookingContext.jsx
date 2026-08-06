@@ -4,23 +4,13 @@ const BookingContext = createContext(null);
 
 export function BookingProvider({ children }) {
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalStep, setModalStep] = useState('form');
-  const [leadInfo, setLeadInfo] = useState(null);
 
-  // opts: { step: 'form' | 'success' | 'calendly', leadInfo: { fullName, firmName } }
-  // Regular "Book a call" CTAs call this with no args and get the full form flow.
-  // The on-page form calls it with { step: 'success', leadInfo } after it submits, so the
-  // rest of the flow (success + schedule) continues in the popup instead of inline.
-  const openModal = useCallback((opts) => {
-    setModalStep(opts?.step || 'form');
-    setLeadInfo(opts?.leadInfo || null);
+  const openModal = useCallback(() => {
     setModalOpen(true);
   }, []);
 
   const closeModal = useCallback(() => {
     setModalOpen(false);
-    setModalStep('form');
-    setLeadInfo(null);
   }, []);
 
   useEffect(() => {
@@ -40,7 +30,7 @@ export function BookingProvider({ children }) {
   }, [modalOpen, closeModal]);
 
   return (
-    <BookingContext.Provider value={{ modalOpen, modalStep, leadInfo, openModal, closeModal, setModalStep }}>
+    <BookingContext.Provider value={{ modalOpen, openModal, closeModal }}>
       {children}
     </BookingContext.Provider>
   );
